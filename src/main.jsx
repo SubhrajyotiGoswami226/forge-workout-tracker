@@ -552,9 +552,19 @@ function AuthPage() {
       );
 
     if (error) {
-      setError(
+      if (
         error.message
-      );
+          ?.toLowerCase()
+          .includes("email not confirmed")
+      ) {
+        setError(
+          "Please check your email inbox and confirm your email before logging in."
+        );
+      } else {
+        setError(
+          error.message
+        );
+      }
 
       return;
     }
