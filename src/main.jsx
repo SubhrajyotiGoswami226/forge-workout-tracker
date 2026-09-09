@@ -1771,10 +1771,10 @@ function ExerciseBuilder({
 
       {exercises.map(
         (exercise, index) => (
-          <div
-            className="builder-row"
-            key={`${exercise.name}-${index}`}
-          >
+            <div
+              className="builder-row"
+              key={index}
+            >
             <div className="builder-index">
               {String(
                 index + 1
